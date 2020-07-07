@@ -19,4 +19,9 @@ function connect_to_database() {
             }
 $pdo=connect_to_database();
 
+$reponse= $pdo->query('SELECT * FROM produit');
+while($donnees =$reponse->fetch())
+{
+    echo'<ul><li>' .$donnees['nom']. '</li></ul>';
+}
 ?>
